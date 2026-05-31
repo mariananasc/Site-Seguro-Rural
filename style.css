@@ -1,0 +1,116 @@
+body {
+  background-image: url('imagens/campo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+/* camada leve por cima do fundo */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.4);
+  z-index: -1;
+}
+
+
+header {
+  background-image: url('imagens/campo.png');
+  background-size: cover;
+  background-position: center;
+  color: #f5f0e6;
+  text-align: center;
+  padding: 3rem 1rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(46, 74, 47, 0.6);
+  z-index: 0;
+}
+
+header h1,
+header p {
+  position: relative;
+  z-index: 2;
+}
+
+nav {
+  background-color: #2e4a2f;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  color: #f5f0e6;
+  margin: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #d8cbb3;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.92);
+  border: 1px solid #e6dccb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+
+.card h2 {
+  color: #5b3a29;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  margin-bottom: 1rem;
+}
+
+.card img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 0.5rem;
+}
+
+footer {
+  background-color: #d8cbb3;
+  color: #5b3a29;
+  text-align: center;
+  padding: 1rem;
+}
